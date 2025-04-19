@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức - Nhanh Organic</title>
+  <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
+  <script src="../JS/bootstrap.bundle.min.js"></script>
+  <script src="../JS/script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <!-- Header -->
+  <header class="header fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <!-- Sidebar Toggle Button -->
+          <div class="d-flex d-lg-none sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <span class="logo-leaf d-none d-lg-inline-block"><i class="fas fa-leaf"></i></span>
+          <a href="../HTML/index.html" style="text-decoration: none"><span class="logo-text">Nhanh Organic</span></a>
+        </div>
+        <div style="display: flex;">
+          <div class="dangnhapdangki">
+            <button type="button" class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal"
+              data-bs-target="#dangnhapdangkimodal"><i class="fas fa-user"></i></button>
+            <div class="modal fade" id="dangnhapdangkimodal" tabindex="-1" aria-labelledby="dangnhapdangkimodalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active w-100" id="dangnhap-tab" data-bs-toggle="tab"
+                          data-bs-target="#dangnhap" type="button" role="tab" aria-controls="dangnhap-tab"
+                          aria-selected="true" style="font-size: 25px;" style="width: 50%;">ĐĂNG NHẬP</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link w-100" id="dangki-tab" data-bs-toggle="tab" data-bs-target="#dangki"
+                          type="button" role="tab" aria-controls="dangki-tab" aria-selected="true"
+                          style="font-size: 25px;" style="width:50%">ĐĂNG
+                          KÍ</button>
+                      </li>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="dangnhap" role="tabpanel"
+                        aria-labelledby="dangnhap-tab">
+
+                        <form class="row mb-2 p-4" id="loginForm">
+                          <div class="col-12">
+                            <div id="loginText" class="form-text"
+                              style="font-weight: 600; color: rgb(3, 84, 22);font-size: 15px;">
+                              Vui lòng
+                              đăng nhập trước
+                              khi mua hàng để
+                              tích lũy điểm, cơ
+                              hội nhận thêm nhiều ưu đãi từ chương trình thành viên Nhanh
+                              Organic</div>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" id="emailInput" name="Email" placeholder="Email">
+                            <span id="email_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" id="passwordInput" name="Password"
+                              placeholder="Mật khẩu">
+                            <span id="pass_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <a href="#" class="forgot-password"
+                              style="text-decoration: none; color: var(--main-green);">Quên
+                              mật khẩu?</a>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-login  btn-lg w-100">ĐĂNG
+                              NHẬP</button>
+                          </div>
+                        </form>
+
+                      </div>
+                      <div class="tab-pane" id="dangki" role="tabpanel" aria-labelledby="dangki-tab">
+                        <form class="row mb-3 p-4" id="formSigin">
+                          <div class="col-12 mt-4">
+                            <input type="text" class="form-control" placeholder="Họ tên" id="hoTen">
+                            <span id="hoTen_error"></span>
+                          </div>
+
+                          <div class="col-6 mt-3">
+                            <input type="text" class="form-control" placeholder="Số điện thoại" id="number">
+                            <span id="numberRegister_error"></span>
+                          </div>
+                          <div class="col-6 mt-3">
+                            <select class="form-select">
+                              <option selected>Chọn giới tính</option>
+                              <option value="Nam">Nam</option>
+                              <option value="Nữ">Nữ</option>
+
+                            </select>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Email" id="emailRegister">
+                            <span id="emailRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" id="passwordRegister">
+                            <span id="passwordRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" id="rePassword">
+                            <span id="rePassword_error"></span>
+                          </div>
+                          <!-- <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Chọn thành phố</option>
+                                                  <option value="hcmcity">Thành phố Hồ Chí Minh</option>
+                                                  <option value="ntcity">Thành phố Nha Trang</option>
+                                                  <option value="dncity">Thành phố Đà Nẵng</option>
+                                                  <option value="hncity">Thành phố Hà Nội</option>
+                                              </select>
+                                          </div>
+                                          <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Quận</option>
+                                                  <option value="1">Quận 1</option>
+                                                  <option value="2">Quận 2</option>
+                                                  <option value="3">Quận 3</option>
+                                                  <option value="4">Quận 4</option>
+                                              </select>
+                                          </div> -->
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Địa chỉ" id="diaChi">
+                            <span id="addRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <label for="" class="form-label">Ngày sinh:</label>
+                            <input type="datetime-local" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+                          </div>
+
+                          <div class="col-12 mt-3">
+                            <div class="form-text">Tôi đã đọc và đồng ý với <span style="color: orangered;">CHÍNH
+                                SÁCH</span> của
+                              chương trình.</div>
+                            <input type="checkbox" class="dongY">
+                            <span id="check_error"></span>
+                          </div>
+                          <div class="col mt-3">
+                            <button type="submit" class="btn btn-dangki w-100">ĐĂNG
+                              KÍ</button>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <a href="../HTML/cart.html" class="btn btn-sm btn-outline-success"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h5>Menu</h5>
+    </div>
+    <ul class="sidebar-menu">
+      <li>
+        <a href="../HTML/index.html"><i class="fas fa-home"></i> Trang chủ</a>
+      </li>
+      <li>
+        <a href="../HTML/products.html"><i class="fas fa-carrot"></i> Sản phẩm</a>
+      </li>
+      <li>
+        <a href="../HTML/news.html"><i class="fas fa-newspaper"></i> Tin tức</a>
+      </li>
+      <li>
+        <a href="../HTML/lienhe.html"><i class="fas fa-phone"></i> Liên hệ</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- News Page Content -->
+    <section class="news-page py-4">
+      <div class="container">
+        <h1 class="text-center mb-2">Tin tức</h1>
+        <div class="d-flex justify-content-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../HTML/index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Tin tức
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- News Articles -->
+        <div class="content">
+          <h1 style="font-weight: 400">
+            Phân biệt các loại dầu ăn hiện nay để đảm bảo sức khỏe cả nhà
+          </h1>
+          <p>
+            Hiện nay trên thị trường có rất nhiều loại dầu ăn. Vậy bạn có biết
+            cách phân biệt và chọn cho gia đình mình loại dầu tốt cho sức khỏe
+            chưa? Hãy cùng Bách hóa XANH tìm hiểu cách hân biệt các loại dầu
+            ăn ngay sau đây nhé!
+          </p>
+
+          <div class="section">
+            <h2>1. Dầu thực vật</h2>
+            <p>
+              Dầu thực vật là loại dầu và chất béo có nguồn gốc từ thực vật,
+              thành phần chính là Triglyceride – còn gọi là chất béo trung
+              tính. Dầu thực vật thường pha trộn nhiều loại dầu khác nhau như
+              dầu cọ, dầu bắp, dầu đậu nành, dầu hướng dương.
+            </p>
+            <p>
+              Chất béo trong dầu thực vật rất cần thiết trong chế độ dinh
+              dưỡng của con người. Chất béo bão hòa từ dầu ăn nếu được sử dụng
+              đúng liều lượng cần thiết (10 - 30%/ngày) thì có lợi cho sức
+              khỏe, tốt cho tim mạch và giúp ích cho chuyển hóa chất dinh
+              dưỡng.
+            </p>
+            <p>
+              Do dầu thực vật được pha từ nhiều loại dầu khác nhau, nên điểm
+              khói của dầu sẽ thay đổi tùy theo tỉ lệ các loại dầu được pha,
+              nếu tỉ lệ dầu cọ, dầu đậu nành trong dầu thực vật cao hơn thì
+              dầu sẽ có điểm khói cao hơn. Dầu thực vật an toàn khi dùng để
+              chiên, xào, nấu canh.
+            </p>
+            <img src="../IMAGE/news7.jpg" />
+          </div>
+
+          <div class="section">
+            <h2>2. Dầu đậu nành</h2>
+            <p>
+              Dầu đậu nành được ép từ hạt đậu nành, chứa hơn 8% nước, 5% chất
+              vô cơ, 15 - 25% glucose, 15 - 20% chất béo, 35 - 45% chất đạm,
+              với đủ các loại amino acid cần thiết.
+            </p>
+            <p>
+              Dầu đậu nành có thể cung cấp chất béo đủ cho nhu cầu của cơ thể
+              mà vẫn bảo vệ tim mạch, chống lão hóa tốt.
+            </p>
+            <p>
+              Dầu đậu nành có thể được dùng để chiên xào, tốt hơn so với dầu
+              bắp và dầu hướng dương. Tuy nhiên, bạn không nên chiên xào quá
+              lâu hoặc đun dầu đậu nành ở nhiệt độ quá cao, sẽ sinh ra chất
+              độc gây ung thư.
+            </p>
+            <img src="../IMAGE/news8.jpg" />
+          </div>
+
+          <div class="section">
+            <h2>3. Dầu gạo</h2>
+            <p>
+              Dầu gạo chứa dưỡng chất Gamma Oryzanol (GO) từ lớp màng cám gạo,
+              ngăn ngừa hấp thu cholesterol LDL có hại cho tim mạch, tăng
+              cường hấp thu cholesterol HDL, là loại cholesterol tốt.
+            </p>
+
+            <p>
+              Ngoài ra dầu gạo rất giàu Vitamin E, giúp chống lão hóa, cân
+              bằng insullin, phòng bệnh tiểu đường.
+            </p>
+            <p>
+              Cách sử dụng: Dầu gạo có nhiệt độ sôi khá cao, 254 độ C, dầu gạo
+              cũng mang lại cho thức ăn mùi vị hấp dẫn hơn, do đó, rất thích
+              hợp để chiên xào.
+            </p>
+            <img src="../IMAGE/news9.jpg" />
+          </div>
+
+          <div class="section">
+            <h2>4. Dầu hạt cải</h2>
+            <p>
+              Dầu hạt cải có hai loại, loại ăn được còn gọi là canola và loại
+              không ăn được dùng để làm chất bôi trơn.
+            </p>
+
+            <p>
+              Dầu canola có hàm lượng cao chất béo không bão hòa đơn, giàu
+              Vitamin E và Omega 3, không chứa cholesterol xấu. Do đó, dầu
+              canola tốt cho tim mạch, chống lão hóa và phòng bệnh ung thư.
+              Ngoài ra, dầu canola còn là nguyên liệu làm đẹp da hiệu quả.
+            </p>
+
+            <p>
+              Cách sử dụng: Dầu canola có mùi vị nhẹ, chịu nhiệt cao, thích
+              hợp để chiên xào.
+            </p>
+          </div>
+          <hr />
+          <section class="popular-news">
+            <div class="container">
+              <div class="posts-news">
+                <h5>Bài viết xem nhiều</h5>
+                <ul>
+                  <li>
+                    <a href="./article1.html">Không phải sữa, những thực phẩm này còn giàu Canxi
+                      hơn!</a>
+                  </li>
+                  <li>
+                    <a href="./article2.html">Organic là gì? Vì sao nên sử dụng thực phẩm hữu cơ?</a>
+                  </li>
+                  <li>
+                    <a href="./article3.html">Phân biệt các loại dầu ăn hiện nay để đảm bảo sức khỏe
+                      cả nhà</a>
+                  </li>
+                  <li>
+                    <a href="./article4.html">9 lợi ích sức khỏe của nấm bờm sư tử và tác dụng phụ</a>
+                  </li>
+                  <li>
+                    <a href="./article5.html">Calo và chất dinh dưỡng để cung cấp năng lượng cho hoạt
+                      động thể thao</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="comment-news">
+                <h5>Bình luận</h5>
+                <div class="fb-comments"
+                  data-href="http://t0307.store.nhanh.vn/khong-phai-sua-nhung-thuc-pham-nay-con-giau-canxi-hon!-n99126.html"
+                  data-numposts="5"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Về Nhanh Organic</h5>
+            <p>
+              Chúng tôi cung cấp thực phẩm sạch, an toàn và đảm bảo chất lượng
+              ngon nhất giao đến tận tay người tiêu dùng.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i> 102 Thái Thịnh, Trung
+              Liệt, Đống Đa, Hà Nội
+            </p>
+            <p><i class="fas fa-phone me-2"></i> 1900.2812</p>
+            <p><i class="fas fa-envelope me-2"></i> info@nhanhorganic.vn</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Theo dõi chúng tôi</h5>
+            <div class="social-links">
+              <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p>© 2025 Nhanh Organic. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to top button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+
+  </script>
+</body>
+
+</html>

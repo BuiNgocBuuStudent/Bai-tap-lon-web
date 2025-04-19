@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức - Nhanh Organic</title>
+  <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
+  <script src="../JS/bootstrap.bundle.min.js"></script>
+  <script src="../JS/script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <!-- Header -->
+  <header class="header fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <!-- Sidebar Toggle Button -->
+          <div class="d-flex d-lg-none sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <span class="logo-leaf d-none d-lg-inline-block"><i class="fas fa-leaf"></i></span>
+          <a href="../HTML/index.html" style="text-decoration: none"><span class="logo-text">Nhanh Organic</span></a>
+        </div>
+        <div style="display: flex;">
+          <div class="dangnhapdangki">
+            <button type="button" class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal"
+              data-bs-target="#dangnhapdangkimodal"><i class="fas fa-user"></i></button>
+            <div class="modal fade" id="dangnhapdangkimodal" tabindex="-1" aria-labelledby="dangnhapdangkimodalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active w-100" id="dangnhap-tab" data-bs-toggle="tab"
+                          data-bs-target="#dangnhap" type="button" role="tab" aria-controls="dangnhap-tab"
+                          aria-selected="true" style="font-size: 25px;" style="width: 50%;">ĐĂNG NHẬP</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link w-100" id="dangki-tab" data-bs-toggle="tab" data-bs-target="#dangki"
+                          type="button" role="tab" aria-controls="dangki-tab" aria-selected="true"
+                          style="font-size: 25px;" style="width:50%">ĐĂNG
+                          KÍ</button>
+                      </li>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="dangnhap" role="tabpanel"
+                        aria-labelledby="dangnhap-tab">
+
+                        <form class="row mb-2 p-4" id="loginForm">
+                          <div class="col-12">
+                            <div id="loginText" class="form-text"
+                              style="font-weight: 600; color: rgb(3, 84, 22);font-size: 15px;">
+                              Vui lòng
+                              đăng nhập trước
+                              khi mua hàng để
+                              tích lũy điểm, cơ
+                              hội nhận thêm nhiều ưu đãi từ chương trình thành viên Nhanh
+                              Organic</div>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" id="emailInput" name="Email" placeholder="Email">
+                            <span id="email_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" id="passwordInput" name="Password"
+                              placeholder="Mật khẩu">
+                            <span id="pass_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <a href="#" class="forgot-password"
+                              style="text-decoration: none; color: var(--main-green);">Quên
+                              mật khẩu?</a>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-login  btn-lg w-100">ĐĂNG
+                              NHẬP</button>
+                          </div>
+                        </form>
+
+                      </div>
+                      <div class="tab-pane" id="dangki" role="tabpanel" aria-labelledby="dangki-tab">
+                        <form class="row mb-3 p-4" id="formSigin">
+                          <div class="col-12 mt-4">
+                            <input type="text" class="form-control" placeholder="Họ tên" id="hoTen">
+                            <span id="hoTen_error"></span>
+                          </div>
+
+                          <div class="col-6 mt-3">
+                            <input type="text" class="form-control" placeholder="Số điện thoại" id="number">
+                            <span id="numberRegister_error"></span>
+                          </div>
+                          <div class="col-6 mt-3">
+                            <select class="form-select">
+                              <option selected>Chọn giới tính</option>
+                              <option value="Nam">Nam</option>
+                              <option value="Nữ">Nữ</option>
+
+                            </select>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Email" id="emailRegister">
+                            <span id="emailRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" id="passwordRegister">
+                            <span id="passwordRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" id="rePassword">
+                            <span id="rePassword_error"></span>
+                          </div>
+                          <!-- <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Chọn thành phố</option>
+                                                  <option value="hcmcity">Thành phố Hồ Chí Minh</option>
+                                                  <option value="ntcity">Thành phố Nha Trang</option>
+                                                  <option value="dncity">Thành phố Đà Nẵng</option>
+                                                  <option value="hncity">Thành phố Hà Nội</option>
+                                              </select>
+                                          </div>
+                                          <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Quận</option>
+                                                  <option value="1">Quận 1</option>
+                                                  <option value="2">Quận 2</option>
+                                                  <option value="3">Quận 3</option>
+                                                  <option value="4">Quận 4</option>
+                                              </select>
+                                          </div> -->
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Địa chỉ" id="diaChi">
+                            <span id="addRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <label for="" class="form-label">Ngày sinh:</label>
+                            <input type="datetime-local" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+                          </div>
+
+                          <div class="col-12 mt-3">
+                            <div class="form-text">Tôi đã đọc và đồng ý với <span style="color: orangered;">CHÍNH
+                                SÁCH</span> của
+                              chương trình.</div>
+                            <input type="checkbox" class="dongY">
+                            <span id="check_error"></span>
+                          </div>
+                          <div class="col mt-3">
+                            <button type="submit" class="btn btn-dangki w-100">ĐĂNG
+                              KÍ</button>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <a href="../HTML/cart.html" class="btn btn-sm btn-outline-success"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h5>Menu</h5>
+    </div>
+    <ul class="sidebar-menu">
+      <li>
+        <a href="../HTML/index.html"><i class="fas fa-home"></i> Trang chủ</a>
+      </li>
+      <li>
+        <a href="../HTML/products.html"><i class="fas fa-carrot"></i> Sản phẩm</a>
+      </li>
+      <li>
+        <a href="../HTML/news.html"><i class="fas fa-newspaper"></i> Tin tức</a>
+      </li>
+      <li>
+        <a href="../HTML/lienhe.html"><i class="fas fa-phone"></i> Liên hệ</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- News Page Content -->
+    <section class="news-page py-4">
+      <div class="container">
+        <h1 class="text-center mb-2">Tin tức</h1>
+        <div class="d-flex justify-content-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../HTML/index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Tin tức
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- News Articles -->
+        <div class="content">
+          <h1 style="font-weight: 400; font-size: 38px">
+            Calo và chất dinh dưỡng để cung cấp năng lượng cho hoạt động thể
+            thao
+          </h1>
+          <p style="color: rgb(56, 55, 55); font-weight: bold">
+            Việc nạp calo và các chất dinh dưỡng đóng vai trò vô cùng quan
+            trọng đối với các hoạt động thể thao và sức khoẻ tổng thể của bạn.
+            Điều này cũng giúp bạn tăng cường hiệu suất tập luyện, đồng thời
+            nâng cao sức đề kháng của mình trước bệnh tật.
+          </p>
+
+          <div class="section">
+            <h2>
+              1. Tầm quan trọng của việc nạp đủ calo và chất dinh dưỡng cho cơ
+              thể
+            </h2>
+
+            <p>
+              Việc cung cấp năng lượng tối ưu cho cơ thể không chỉ qua trọng
+              đối với các hoạt động thể thao mà còn đối với sức khoẻ tổng thể
+              của bạn. Nó giúp các vận động viên tối ưu hóa phản ứng của họ
+              đối với việc rèn luyện và cải thiện hiệu suất thể thao.
+            </p>
+            <p>
+              Ngược lại, khi không nạp đủ năng lượng vào cơ thể sẽ làm giảm
+              hoặc phủ nhận lợi ích của việc tập luyện, vì nó có thể làm cản
+              trở kết quả hoạt động và làm giảm khả năng phục hồi của cơ thể.
+              Ngoài ra, khi không tiêu thụ đủ calo để đáp ứng nhu cầu hoạt
+              động, cơ thể sẽ phân huỷ chất béo và mô cơ để sử dụng làm nhiên
+              liệu, dẫn đến mất sức bền và khả năng chịu đựng của cơ thể. Bên
+              cạnh đó, không nạp đủ calo cho cơ thể cũng dẫn đến một số vấn đề
+              sau đây:
+            </p>
+            <p>
+              Suy giảm hệ thống miễn dịch, khiến làm tăng nguy cơ mắc bệnh.
+              Thiếu hụt dinh dưỡng, có thể làm suy giảm chức năng nhận thức và
+              sức khỏe não bộ, cũng như ảnh hưởng đến sức khỏe của xương và
+              các chức năng cơ thể khác.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>2. Nạp bao nhiêu calo là đủ?</h3>
+            <p>
+              Khi xem xét về nhu cầu calo của một người, nhất là ở các vận
+              động viên trẻ, chúng ta sẽ dựa trên nhiều yếu tố khác nhau, bao
+              gồm tuổi tác, cường độ và thời gian hoạt động, cũng như kích
+              thước và các thành phần của cơ thể.
+            </p>
+            <p>
+              Thông thường, lượng calo khuyến nghị hàng ngày cho các vận động
+              viên nữ là khoảng 20 – 23 calo cho mỗi pound trọng lượng cơ thể
+              (tương đương 45 – 50 calo mỗi kg), hoặc thậm chí cao hơn đối với
+              các vận động viên đang xây dựng khối lượng cơ nạc. Tốt nhất, bạn
+              nên tham khảo ý kiến của các chuyên gia chăm sóc sức khỏe hoặc
+              chuyên gia về dinh dưỡng để xác định chính xác calo mà bạn cần
+              nạp để đạt được sự cân bằng năng lượng.
+            </p>
+            <p>
+              Một số dấu hiệu nhận biết không nạp đủ năng lượng ở các nữ vận
+              động viên trẻ, bao gồm:
+            </p>
+            <p>
+              Chỉ số khối cơ thể (BMI) dưới mức 18,5 <br />Tỷ lệ mỡ của cơ thể
+              dưới 12% <br />Chậm kinh, kinh nguyệt không đều hoặc ngừng kinh
+              <br />Mật độ khoáng xương thấp, có thể biểu hiện bởi gãy xương
+              do mệt mỏi thường xuyên.
+            </p>
+            <figure>
+              <img src="../IMAGE/news12.jpg" width="800px" />
+              <figcaption style="text-align: center; font-style: italic; color: gray">
+                Với những người tập thể thao, lượng calo bổ sung phụ thuộc
+                nhiều yếu tố khác nhau
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="section">
+            <h2>
+              3. Bắt đầu cân bằng năng lượng với một chế độ dinh dưỡng lành
+              mạnh
+            </h2>
+            <p>
+              Chìa khoá để giúp bạn duy trì sự cân bằng năng lượng là tiêu thụ
+              calo thông qua một chế độ ăn uống lành mạnh. Dưới đây là những
+              chất dinh dưỡng thiết yếu tạo nên một nền tảng vững chắc của một
+              chế độ ăn uống lành mạnh.
+            </p>
+            <h3>3.1. Carbohydrate</h3>
+            <p>
+              Đây là nguồn năng lượng chính giúp bạn tập luyện thể chất và nên
+              chiếm từ 50 – 60% tổng năng lượng ăn vào của một vận động viên
+              trẻ tuổi. Theo các chuyên gia, bạn nên tiêu thụ mỗi ngày từ 3 –
+              5 gram carbohydrate cho mỗi pound trọng lượng cơ thể.
+            </p>
+
+            <p>
+              Các vận động viên nên ăn carbohydrate trước và sau khi tập luyện
+              thể thao. Những loại thực phẩm chứa carbohydrate được chế biến
+              tối thiểu, nhiều chất xơ và ít đường đều là những nguồn cung cấp
+              năng lượng tốt nhất cho bạn. Những loại thực phẩm này thường bao
+              gồm trái cây, rau, đậu, ngũ cốc nguyên hạt, gạo nâu, gạo hoang
+              dã, bột yến mạch và bỏng ngô.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>3.2. Protein</h3>
+            <p>
+              Đây là một yếu tố quan trọng giúp bạn xây dựng và sửa chữa cơ
+              bắp, giúp cơ bắp phục hồi nhanh chóng sau khi tập luyện thể thao
+              và cải thiện sức mạnh. Các chuyên gia dinh dưỡng khuyến cáo
+              rằng, bạn nên tiêu thụ mỗi ngày khoảng 0,5 – 0,8 gam protein cho
+              mỗi pound trọng lượng cơ thể. Nhìn chung, lượng protein nên
+              chiếm từ 10 – 35% tổng năng lượng tiêu thụ. Cách đơn giản và
+              hiệu quả nhất để đáp ứng được nhu cầu về protein là thông qua
+              các nguồn thực phẩm.
+            </p>
+            <img src="" alt="" />
+            <p>
+              Nguồn protein động vật bao gồm sữa tách béo hoặc 1%, sữa chua Hy
+              Lạp, trứng, pho mát, cá và thịt nạc. Nguồn protein từ thực vật
+              bao gồm đậu, đậu lăng, các loại hạt, thực phẩm từ đậu nành hoặc
+              sữa đậu nành. Đặc biệt, những người ăn chay thường khó đáp ứng
+              được nhu cầu cung cấp protein cho cơ thể, vì vậy việc bổ sung
+              bột protein là điều rất cần thiết. Ngoài ra, khi bổ sung
+              protein, bạn nên giới hạn số lượng tiêu thụ hàng ngày không quá
+              0,6 gam cho mỗi pound trọng lượng cơ thể.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>3.3. Chất béo lành mạnh</h3>
+            <p>
+              Các chất béo lành mạnh, chẳng hạn như chất béo không bão hoà đa
+              và không bão hoà đơn, là những chất dinh dưỡng thiết yếu cho các
+              vận động viên trẻ tuổi. Nếu không cung cấp đủ các chất béo này
+              có thể làm giảm hiệu suất thể thao của bạn. Các chuyên gia
+              khuyến cáo rằng bạn nên tiêu thụ mỗi ngày khoảng 0,45 gam chất
+              béo cho mỗi pound trọng lượng cơ thể. Chất béo nên chiếm khoảng
+              20 – 35% tổng năng lượng mà bạn nạp vào cơ thể.
+            </p>
+            <p>
+              Một số chất béo có thể đến từ nguồn động vật, như một phần để
+              đáp ứng mục tiêu protein, tuy nhiên bạn nên hạn chế tiêu thụ
+              loại chất béo chuyển hoá. Các chất béo lành mạnh thường được tìm
+              thấy nhiều trong các loại hạt, chẳng hạn như hạnh nhân, quả óc
+              chó, hạt lanh, hạt bí ngô và hạt chia. Các loại dầu cũng chứa
+              chất béo tốt cho sức khỏe, bao gồm dầu dừa, dầu ô liu, dầu mè và
+              dầu lanh. Ngoài ra, trái bơ và các loại cá béo, chẳng hạn như cá
+              hồi và cá ngừ cũng là những nguồn cung cấp chất béo lành mạnh.
+            </p>
+          </div>
+          <div class="section">
+            <h3>3.4. Axit béo omega-3</h3>
+            <p>
+              Đây là một loại chất béo có vai trò đặc biệt quan trọng đối với
+              tất cả các tế bào của cơ thể, giúp chúng hoạt động khỏe mạnh và
+              bình thường. Tuy nhiên, cơ thể chúng ta không thể sản xuất ra
+              các hợp chất này, vì vậy cách duy nhất để có được axit béo
+              omega-3 là thông qua chế độ ăn uống hoặc một số loại thực phẩm
+              chức năng nhất định. Hai loại axit béo omega-3 thường gặp nhất,
+              bao gồm axit eicosapentaenoic (EPA) và axit docosahexaenoic
+              (DHA), có chủ yếu trong các loại cá béo, ví dụ như cá ngừ hoặc
+              cá hồi. Thực tế, hầu hết mọi người đều không tiêu thụ đủ loại cá
+              thích hợp để có thể cung cấp đủ lượng omega-3 cần thiết. Ngoài
+              ra, hiện nay axit béo omega-3 đến từ cá cũng đã được điều chế
+              sẵn dưới dạng thực phẩm chức năng.
+            </p>
+            <p>
+              Một số nghiên cứu cho thấy, axit béo omega-3 từ dầu cá có tác
+              dụng hỗ trợ rất tốt cho sức khỏe tim mạch. Hơn nữa, nó cũng giúp
+              duy trì chức năng não và thần kinh thích hợp, đồng thời hỗ trợ
+              các khớp, da và mắt khỏe mạnh. Bên cạnh đó, loại axit béo này
+              cũng có thể giúp giảm đau và cứng khớp do tập thể dục. Một cuộc
+              nghiên cứu mới đây cho thấy, DHA có tác dụng làm giảm đáng kể
+              tình trạng đau nhức cơ và cải thiện phạm vi chuyển động sau khi
+              bạn thực hiện các bài tập tay trước.
+            </p>
+            <figure>
+              <img src="../IMAGE/news13.jpg" />
+              <figcaption style="text-align: center; font-style: italic; color: gray">
+                Dầu cá
+              </figcaption>
+            </figure>
+          </div>
+          <hr />
+          <section class="popular-news">
+            <div class="container">
+              <div class="posts-news">
+                <h5>Bài viết xem nhiều</h5>
+                <ul>
+                  <li>
+                    <a href="./article1.html">Không phải sữa, những thực phẩm này còn giàu Canxi
+                      hơn!</a>
+                  </li>
+                  <li>
+                    <a href="./article2.html">Organic là gì? Vì sao nên sử dụng thực phẩm hữu cơ?</a>
+                  </li>
+                  <li>
+                    <a href="./article3.html">Phân biệt các loại dầu ăn hiện nay để đảm bảo sức khỏe
+                      cả nhà</a>
+                  </li>
+                  <li>
+                    <a href="./article4.html">9 lợi ích sức khỏe của nấm bờm sư tử và tác dụng phụ</a>
+                  </li>
+                  <li>
+                    <a href="./article5.html">Calo và chất dinh dưỡng để cung cấp năng lượng cho hoạt
+                      động thể thao</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="comment-news">
+                <h5>Bình luận</h5>
+                <div class="fb-comments"
+                  data-href="http://t0307.store.nhanh.vn/khong-phai-sua-nhung-thuc-pham-nay-con-giau-canxi-hon!-n99126.html"
+                  data-numposts="5"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Về Nhanh Organic</h5>
+            <p>
+              Chúng tôi cung cấp thực phẩm sạch, an toàn và đảm bảo chất lượng
+              ngon nhất giao đến tận tay người tiêu dùng.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i> 102 Thái Thịnh, Trung
+              Liệt, Đống Đa, Hà Nội
+            </p>
+            <p><i class="fas fa-phone me-2"></i> 1900.2812</p>
+            <p><i class="fas fa-envelope me-2"></i> info@nhanhorganic.vn</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Theo dõi chúng tôi</h5>
+            <div class="social-links">
+              <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p>© 2025 Nhanh Organic. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to top button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+
+  </script>
+</body>
+
+</html>

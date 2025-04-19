@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức - Nhanh Organic</title>
+  <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
+  <script src="../JS/bootstrap.bundle.min.js"></script>
+  <script src="../JS/script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <!-- Header -->
+  <header class="header fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <!-- Sidebar Toggle Button -->
+          <div class="d-flex d-lg-none sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <span class="logo-leaf d-none d-lg-inline-block"><i class="fas fa-leaf"></i></span>
+          <a href="../HTML/index.html" style="text-decoration: none"><span class="logo-text">Nhanh Organic</span></a>
+        </div>
+        <div style="display: flex;">
+          <div class="dangnhapdangki">
+            <button type="button" class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal"
+              data-bs-target="#dangnhapdangkimodal"><i class="fas fa-user"></i></button>
+            <div class="modal fade" id="dangnhapdangkimodal" tabindex="-1" aria-labelledby="dangnhapdangkimodalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active w-100" id="dangnhap-tab" data-bs-toggle="tab"
+                          data-bs-target="#dangnhap" type="button" role="tab" aria-controls="dangnhap-tab"
+                          aria-selected="true" style="font-size: 25px;" style="width: 50%;">ĐĂNG NHẬP</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link w-100" id="dangki-tab" data-bs-toggle="tab" data-bs-target="#dangki"
+                          type="button" role="tab" aria-controls="dangki-tab" aria-selected="true"
+                          style="font-size: 25px;" style="width:50%">ĐĂNG
+                          KÍ</button>
+                      </li>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="dangnhap" role="tabpanel"
+                        aria-labelledby="dangnhap-tab">
+
+                        <form class="row mb-2 p-4" id="loginForm">
+                          <div class="col-12">
+                            <div id="loginText" class="form-text"
+                              style="font-weight: 600; color: rgb(3, 84, 22);font-size: 15px;">
+                              Vui lòng
+                              đăng nhập trước
+                              khi mua hàng để
+                              tích lũy điểm, cơ
+                              hội nhận thêm nhiều ưu đãi từ chương trình thành viên Nhanh
+                              Organic</div>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" id="emailInput" name="Email" placeholder="Email">
+                            <span id="email_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" id="passwordInput" name="Password"
+                              placeholder="Mật khẩu">
+                            <span id="pass_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <a href="#" class="forgot-password"
+                              style="text-decoration: none; color: var(--main-green);">Quên
+                              mật khẩu?</a>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-login  btn-lg w-100">ĐĂNG
+                              NHẬP</button>
+                          </div>
+                        </form>
+
+                      </div>
+                      <div class="tab-pane" id="dangki" role="tabpanel" aria-labelledby="dangki-tab">
+                        <form class="row mb-3 p-4" id="formSigin">
+                          <div class="col-12 mt-4">
+                            <input type="text" class="form-control" placeholder="Họ tên" id="hoTen">
+                            <span id="hoTen_error"></span>
+                          </div>
+
+                          <div class="col-6 mt-3">
+                            <input type="text" class="form-control" placeholder="Số điện thoại" id="number">
+                            <span id="numberRegister_error"></span>
+                          </div>
+                          <div class="col-6 mt-3">
+                            <select class="form-select">
+                              <option selected>Chọn giới tính</option>
+                              <option value="Nam">Nam</option>
+                              <option value="Nữ">Nữ</option>
+
+                            </select>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Email" id="emailRegister">
+                            <span id="emailRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" id="passwordRegister">
+                            <span id="passwordRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" id="rePassword">
+                            <span id="rePassword_error"></span>
+                          </div>
+                          <!-- <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Chọn thành phố</option>
+                                                  <option value="hcmcity">Thành phố Hồ Chí Minh</option>
+                                                  <option value="ntcity">Thành phố Nha Trang</option>
+                                                  <option value="dncity">Thành phố Đà Nẵng</option>
+                                                  <option value="hncity">Thành phố Hà Nội</option>
+                                              </select>
+                                          </div>
+                                          <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Quận</option>
+                                                  <option value="1">Quận 1</option>
+                                                  <option value="2">Quận 2</option>
+                                                  <option value="3">Quận 3</option>
+                                                  <option value="4">Quận 4</option>
+                                              </select>
+                                          </div> -->
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Địa chỉ" id="diaChi">
+                            <span id="addRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <label for="" class="form-label">Ngày sinh:</label>
+                            <input type="datetime-local" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+                          </div>
+
+                          <div class="col-12 mt-3">
+                            <div class="form-text">Tôi đã đọc và đồng ý với <span style="color: orangered;">CHÍNH
+                                SÁCH</span> của
+                              chương trình.</div>
+                            <input type="checkbox" class="dongY">
+                            <span id="check_error"></span>
+                          </div>
+                          <div class="col mt-3">
+                            <button type="submit" class="btn btn-dangki w-100">ĐĂNG
+                              KÍ</button>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <a href="../HTML/cart.html" class="btn btn-sm btn-outline-success"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h5>Menu</h5>
+    </div>
+    <ul class="sidebar-menu">
+      <li>
+        <a href="../HTML/index.html"><i class="fas fa-home"></i> Trang chủ</a>
+      </li>
+      <li>
+        <a href="../HTML/products.html"><i class="fas fa-carrot"></i> Sản phẩm</a>
+      </li>
+      <li>
+        <a href="../HTML/news.html"><i class="fas fa-newspaper"></i> Tin tức</a>
+      </li>
+      <li>
+        <a href="../HTML/lienhe.html"><i class="fas fa-phone"></i> Liên hệ</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- News Page Content -->
+    <section class="news-page py-4">
+      <div class="container">
+        <h1 class="text-center mb-2">Tin tức</h1>
+        <div class="d-flex justify-content-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../HTML/index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Tin tức
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- News Articles -->
+        <div class="content">
+          <h1 style="font-weight: 400; font-size: 38px">
+            Tác dụng của cây mạch nha cho sức khỏe
+          </h1>
+          <p style="color: rgb(56, 55, 55)">
+            Mạch nha được sử dụng hàng ngày như một nguyên liệu chế biến thức
+            ăn và có thể được tìm thấy trong nhiều loại sản phẩm khác nhau,
+            bao gồm giấm, bia, ngũ cốc, v.v. Mặc dù nó đã được sử dụng theo
+            truyền thống như một chất làm ngọt và tăng hương vị, một số nghiên
+            cứu đã phát hiện ra rằng việc hoán đổi đường để chiết xuất mạch
+            nha có thể bổ sung một lượng chất dinh dưỡng bổ sung vào chế độ ăn
+            uống của bạn và có thể liên quan đến một số lợi ích sức khỏe, bao
+            gồm cả cải thiện tâm trạng, sức khỏe tim mạch và tiêu hóa.
+          </p>
+
+          <div class="section">
+            <h2>1. Mạch nha là gì?</h2>
+
+            <p>
+              Mạch nha là một loại hạt ngũ cốc, chẳng hạn như lúa mạch, đã
+              trải qua quá trình sấy khô. Đầu tiên, hạt ngũ cốc được ngâm
+              trong nước để nảy mầm và sau đó được làm khô bằng không khí nóng
+              để ngừng nảy mầm. Quá trình này làm cho hạt phát triển một số
+              enzym cần thiết để phá vỡ tinh bột thành các chuỗi đường ngắn
+              hơn. Các enzym khác được tạo ra trong quá trình này giúp phá vỡ
+              các protein trong ngũ cốc thành các axit amin nhỏ hơn có thể
+              được sử dụng bởi nấm men.
+            </p>
+            <p>
+              Hạt mạch nha có hương vị ngọt ngào thường được mô tả là đậm đà,
+              có vị béo ngậy và giống như caramel. Điều này làm cho chúng trở
+              thành một sự lựa chọn thích hợp làm thành phần cho nhiều loại
+              thực phẩm và sản phẩm khác nhau.
+            </p>
+            <p>
+              Ngũ cốc mạch nha được coi là cần thiết cho quá trình nấu bia,
+              một loại đồ uống từ mạch nha, cũng như scotch mạch nha đơn hoặc
+              rượu whisky mạch nha đơn, thức uống mạch nha là sản phẩm của một
+              nhà máy chưng cất đơn lẻ.
+            </p>
+            <p>
+              Mạch nha đại mạch cũng được kết hợp với sữa bột, bột mì, muối và
+              đường để tạo thành bột mạch nha. Đây là thành phần chính trong
+              món lắc mạch nha hay còn gọi là sữa lắc mạch nha.
+            </p>
+            <p>
+              Nó cũng có thể được sử dụng để thêm hương vị và mùi thơm đặc
+              trưng cho giấm mạch nha, sữa mạch nha và ngũ cốc.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>2. Tác dụng của cây dược liệu mạch nha cho sức khỏe</h2>
+            <h3>2.1. Chứa một số chất dinh dưỡng</h3>
+            <p>
+              Một số nghiên cứu cho thấy ngũ cốc mạch nha có thể là một nguồn
+              dinh dưỡng quan trọng. Trên thực tế, chiết xuất mạch nha là
+              nguồn cung cấp dồi dào vitamin và khoáng chất, axit amin, silic
+              thực phẩm (hỗ trợ sức khỏe của xương), vitamin B và vi khoáng
+              chất. Một nghiên cứu được công bố trên Tạp chí Khoa học và Công
+              nghệ Thực phẩm cũng cho thấy rằng quá trình ủ mạch nha có hiệu
+              quả trong việc cải thiện chất lượng dinh dưỡng của hạt kê ngọc
+              trai, dẫn đến tăng hàm lượng protein và chất xơ, đồng thời giảm
+              tổng lượng chất béo.
+            </p>
+            <figure>
+              <img src="../IMAGE/news14.jpg" />
+              <figcaption style="text-align: center; font-style: italic; color: gray">
+                Cây mạch nha
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="section">
+            <h3>2.2. Hỗ trợ sức khỏe tiêu hóa</h3>
+            <p>
+              Ngoài hồ sơ chất dinh dưỡng ấn tượng của nó, một số nghiên cứu
+              đã phát hiện ra rằng mạch nha cũng có lợi cho sức khỏe hệ tiêu
+              hóa. Greaves nói rằng “các nghiên cứu cho thấy chiết xuất mạch
+              nha tạo điều kiện thuận lợi cho sự phát triển của các vi khuẩn
+              probiotic có thể tăng cường sức khỏe hệ tiêu hóa bằng cách hỗ
+              trợ các vi khuẩn có lợi cho đường ruột”. Dạng vi khuẩn có lợi
+              này đóng vai trò trung tâm trong hầu hết mọi khía cạnh của sức
+              khỏe và bệnh tật. Với nghiên cứu cho thấy sức khỏe của hệ vi
+              sinh vật đường ruột của bạn có thể ảnh hưởng đến chức năng miễn
+              dịch, khả năng hấp thụ chất dinh dưỡng, mức cholesterol và hơn
+              thế nữa.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>2.3. Có thể giúp thúc đẩy mức cholesterol khỏe mạnh</h3>
+            <p>
+              Mặc dù cần nhiều nghiên cứu hơn để đánh giá tác dụng ở người,
+              một số nghiên cứu cho thấy mạch nha có lợi cho sức khỏe tim mạch
+              bằng cách giúp giảm mức cholesterol. Ví dụ, một mô hình động vật
+              ở Nam Úc đã phát hiện ra rằng việc cho chuột ăn lúa mạch mạch
+              nha đã giúp giảm mức cholesterol xấu LDL và VLDL ở mức độ cao
+              hơn so với cám lúa mì. Các nghiên cứu khác đã phát hiện ra rằng
+              một số hợp chất được tìm thấy trong lúa mạch có thể có hiệu quả
+              trong việc giảm mức cholesterol và giảm mỡ bụng, chỉ số khối cơ
+              thể và vòng eo. Tuy nhiên, các nghiên cứu bổ sung cần được tiến
+              hành để xác định xem liệu những phát hiện này có áp dụng cho lúa
+              mạch mạch nha hay không.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>2.4. Cải thiện tâm trạng</h3>
+            <p>
+              Một trong những lợi ích ấn tượng nhất của mạch nha là tác động
+              tích cực đến tâm trạng và sức khỏe tinh thần nhờ sự hiện diện
+              của hordenine - một hợp chất được tìm thấy trong lúa mạch đã
+              được nghiên cứu kỹ về tác dụng nâng cao tâm trạng. Một nghiên
+              cứu năm 2017 đã xem xét kỹ hơn các đặc tính của hợp chất có
+              nguồn gốc tự nhiên này và kết luận rằng hordenine có thể chịu
+              trách nhiệm về tác dụng nâng cao tâm trạng liên quan đến bia,
+              phần lớn là do khả năng kích hoạt một thụ thể dopamine cụ thể
+              trong não.
+            </p>
+            <img src="../IMAGE/news15.jpg" alt="" />
+            <p>
+              Các nghiên cứu cho thấy, quá trình ủ mạch nha có thể giúp tăng
+              khả năng tiêu hóa của hạt ngũ cốc bằng cách giảm hàm lượng chất
+              kháng dinh dưỡng. Chất kháng dinh dưỡng là những hợp chất làm
+              giảm khả năng tiêu hóa và hấp thụ một số chất dinh dưỡng của cơ
+              thể. Một nghiên cứu được công bố trên Tạp chí Nghiên cứu Thực
+              phẩm đã lưu ý rằng việc xử lý lúa miến và kê ngọc trai bằng sự
+              kết hợp của mạch nha và lên men đã cải thiện đáng kể khả năng
+              tiêu hóa của protein. Nó cũng làm giảm mức tannin và phytate,
+              hai loại chất kháng dinh dưỡng có thể cản trở sự hấp thụ chất
+              dinh dưỡng.
+            </p>
+            <p>
+              Mạch nha là một loại hạt ngũ cốc rất tốt cho sức khỏe và được sử
+              dụng kết hợp với nhiều nguyên liệu để trở thành các món ăn ngon
+              miệng.
+            </p>
+          </div>
+
+          <hr />
+          <section class="popular-news">
+            <div class="container">
+              <div class="posts-news">
+                <h5>Bài viết xem nhiều</h5>
+                <ul>
+                  <li>
+                    <a href="./article1.html">Không phải sữa, những thực phẩm này còn giàu Canxi
+                      hơn!</a>
+                  </li>
+                  <li>
+                    <a href="./article2.html">Organic là gì? Vì sao nên sử dụng thực phẩm hữu cơ?</a>
+                  </li>
+                  <li>
+                    <a href="./article3.html">Phân biệt các loại dầu ăn hiện nay để đảm bảo sức khỏe
+                      cả nhà</a>
+                  </li>
+                  <li>
+                    <a href="./article4.html">9 lợi ích sức khỏe của nấm bờm sư tử và tác dụng phụ</a>
+                  </li>
+                  <li>
+                    <a href="./article5.html">Calo và chất dinh dưỡng để cung cấp năng lượng cho hoạt
+                      động thể thao</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="comment-news">
+                <h5>Bình luận</h5>
+                <div class="fb-comments"
+                  data-href="http://t0307.store.nhanh.vn/khong-phai-sua-nhung-thuc-pham-nay-con-giau-canxi-hon!-n99126.html"
+                  data-numposts="5"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Về Nhanh Organic</h5>
+            <p>
+              Chúng tôi cung cấp thực phẩm sạch, an toàn và đảm bảo chất lượng
+              ngon nhất giao đến tận tay người tiêu dùng.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i> 102 Thái Thịnh, Trung
+              Liệt, Đống Đa, Hà Nội
+            </p>
+            <p><i class="fas fa-phone me-2"></i> 1900.2812</p>
+            <p><i class="fas fa-envelope me-2"></i> info@nhanhorganic.vn</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Theo dõi chúng tôi</h5>
+            <div class="social-links">
+              <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p>© 2025 Nhanh Organic. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to top button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+
+  </script>
+</body>
+
+</html>

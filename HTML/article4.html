@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức - Nhanh Organic</title>
+  <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
+  <script src="../JS/bootstrap.bundle.min.js"></script>
+  <script src="../JS/script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <!-- Header -->
+  <header class="header fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <!-- Sidebar Toggle Button -->
+          <div class="d-flex d-lg-none sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <span class="logo-leaf d-none d-lg-inline-block"><i class="fas fa-leaf"></i></span>
+          <a href="../HTML/index.html" style="text-decoration: none"><span class="logo-text">Nhanh Organic</span></a>
+        </div>
+        <div style="display: flex;">
+          <div class="dangnhapdangki">
+            <button type="button" class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal"
+              data-bs-target="#dangnhapdangkimodal"><i class="fas fa-user"></i></button>
+            <div class="modal fade" id="dangnhapdangkimodal" tabindex="-1" aria-labelledby="dangnhapdangkimodalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active w-100" id="dangnhap-tab" data-bs-toggle="tab"
+                          data-bs-target="#dangnhap" type="button" role="tab" aria-controls="dangnhap-tab"
+                          aria-selected="true" style="font-size: 25px;" style="width: 50%;">ĐĂNG NHẬP</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link w-100" id="dangki-tab" data-bs-toggle="tab" data-bs-target="#dangki"
+                          type="button" role="tab" aria-controls="dangki-tab" aria-selected="true"
+                          style="font-size: 25px;" style="width:50%">ĐĂNG
+                          KÍ</button>
+                      </li>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="dangnhap" role="tabpanel"
+                        aria-labelledby="dangnhap-tab">
+
+                        <form class="row mb-2 p-4" id="loginForm">
+                          <div class="col-12">
+                            <div id="loginText" class="form-text"
+                              style="font-weight: 600; color: rgb(3, 84, 22);font-size: 15px;">
+                              Vui lòng
+                              đăng nhập trước
+                              khi mua hàng để
+                              tích lũy điểm, cơ
+                              hội nhận thêm nhiều ưu đãi từ chương trình thành viên Nhanh
+                              Organic</div>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" id="emailInput" name="Email" placeholder="Email">
+                            <span id="email_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" id="passwordInput" name="Password"
+                              placeholder="Mật khẩu">
+                            <span id="pass_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <a href="#" class="forgot-password"
+                              style="text-decoration: none; color: var(--main-green);">Quên
+                              mật khẩu?</a>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-login  btn-lg w-100">ĐĂNG
+                              NHẬP</button>
+                          </div>
+                        </form>
+
+                      </div>
+                      <div class="tab-pane" id="dangki" role="tabpanel" aria-labelledby="dangki-tab">
+                        <form class="row mb-3 p-4" id="formSigin">
+                          <div class="col-12 mt-4">
+                            <input type="text" class="form-control" placeholder="Họ tên" id="hoTen">
+                            <span id="hoTen_error"></span>
+                          </div>
+
+                          <div class="col-6 mt-3">
+                            <input type="text" class="form-control" placeholder="Số điện thoại" id="number">
+                            <span id="numberRegister_error"></span>
+                          </div>
+                          <div class="col-6 mt-3">
+                            <select class="form-select">
+                              <option selected>Chọn giới tính</option>
+                              <option value="Nam">Nam</option>
+                              <option value="Nữ">Nữ</option>
+
+                            </select>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Email" id="emailRegister">
+                            <span id="emailRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" id="passwordRegister">
+                            <span id="passwordRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" id="rePassword">
+                            <span id="rePassword_error"></span>
+                          </div>
+                          <!-- <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Chọn thành phố</option>
+                                                  <option value="hcmcity">Thành phố Hồ Chí Minh</option>
+                                                  <option value="ntcity">Thành phố Nha Trang</option>
+                                                  <option value="dncity">Thành phố Đà Nẵng</option>
+                                                  <option value="hncity">Thành phố Hà Nội</option>
+                                              </select>
+                                          </div>
+                                          <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Quận</option>
+                                                  <option value="1">Quận 1</option>
+                                                  <option value="2">Quận 2</option>
+                                                  <option value="3">Quận 3</option>
+                                                  <option value="4">Quận 4</option>
+                                              </select>
+                                          </div> -->
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Địa chỉ" id="diaChi">
+                            <span id="addRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <label for="" class="form-label">Ngày sinh:</label>
+                            <input type="datetime-local" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+                          </div>
+
+                          <div class="col-12 mt-3">
+                            <div class="form-text">Tôi đã đọc và đồng ý với <span style="color: orangered;">CHÍNH
+                                SÁCH</span> của
+                              chương trình.</div>
+                            <input type="checkbox" class="dongY">
+                            <span id="check_error"></span>
+                          </div>
+                          <div class="col mt-3">
+                            <button type="submit" class="btn btn-dangki w-100">ĐĂNG
+                              KÍ</button>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <a href="../HTML/cart.html" class="btn btn-sm btn-outline-success"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h5>Menu</h5>
+    </div>
+    <ul class="sidebar-menu">
+      <li>
+        <a href="../HTML/index.html"><i class="fas fa-home"></i> Trang chủ</a>
+      </li>
+      <li>
+        <a href="../HTML/products.html"><i class="fas fa-carrot"></i> Sản phẩm</a>
+      </li>
+      <li>
+        <a href="../HTML/news.html"><i class="fas fa-newspaper"></i> Tin tức</a>
+      </li>
+      <li>
+        <a href="../HTML/lienhe.html"><i class="fas fa-phone"></i> Liên hệ</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- News Page Content -->
+    <section class="news-page py-4">
+      <div class="container">
+        <h1 class="text-center mb-2">Tin tức</h1>
+        <div class="d-flex justify-content-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../HTML/index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Tin tức
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- News Articles -->
+        <div class="content">
+          <h1 style="font-weight: 400">
+            9 lợi ích sức khỏe của nấm bờm sư tử và tác dụng phụ
+          </h1>
+          <p>
+            Nấm bờm sư tử (còn gọi là nấm hầu thủ hoặc yamabushitake) là loại
+            nấm lớn, có màu trắng và xù xì giống bờm sư tử. Có thể ăn sống,
+            nấu chín, sấy khô hoặc ngâm nấm hầu thủ như một loại trà. Chiết
+            xuất của chúng được sử dụng cho các loại thực phẩm chức năng. Nó
+            có vị giống hải sản (cua hoặc tôm hùm) và chứa nhiều hoạt chất
+            sinh học có tác dụng tốt đối với cơ thể, đặc biệt là não, tim và
+            ruột.
+          </p>
+
+          <div class="section">
+            <h2>1. 9 lợi ích sức khỏe của nấm hầu thủ và chiết xuất</h2>
+            <h3>1.1 Bảo vệ cơ thể chống lại chứng mất trí nhớ</h3>
+            <p>
+              Khả năng hình thành và phát triển các kết nối mới của não thường
+              giảm dần theo tuổi tác. Điều này có thể giải thích vì sao hoạt
+              động trí óc trở nên trì trệ hơn ở nhiều người lớn tuổi. Các
+              nghiên cứu đã phát hiện ra rằng nấm hầu thủ có chứa 2 hợp chất
+              đặc biệt có thể kích thích sự phát triển của tế bào não là
+              hericenones và erinacines. Ngoài ra, các nghiên cứu trên động
+              vật cũng phát hiện rằng loại nấm này có thể giúp cơ thể chống
+              lại bệnh Alzheimer - một bệnh thoái hóa não gây mất trí nhớ tiến
+              triển.
+            </p>
+            <p>
+              Trên thực tế, nấm bờm sư tử và chiết xuất của nó được chứng minh
+              là có tác dụng làm giảm các triệu chứng mất trí nhớ ở chuột,
+              ngăn ngừa tổn thương tế bào thần kinh do mảng amyloid - beta
+              tích tụ trong não ở bệnh nhân Alzheimer. Và hiện mặc dù chưa có
+              nghiên cứu phân tích liệu nấm hầu thủ có lợi cho bệnh Alzheimer
+              ở người hay không, nhưng nó có tác dụng tăng cường hoạt động trí
+              óc.
+            </p>
+            <p>
+              Một nghiên cứu ở người lớn tuổi bị suy giảm nhận thức nhẹ cho
+              thấy việc tiêu thụ 3g nấm bờm sư tử dạng bột mỗi ngày trong 4
+              tháng giúp cải thiện đáng kể chức năng thần kinh. Tuy nhiên,
+              những lợi ích này biến mất ngay khi ngừng bổ sung nấm hầu thủ.
+              Như vậy, nó thúc đẩy sự phát triển thần kinh và bảo vệ não khỏi
+              những tổn thương liên quan tới bệnh Alzheimer. Tuy nhiên, điều
+              quan trọng cần lưu ý là hầu hết các nghiên cứu đều được thực
+              hiện trên động vật hoặc trong ống nghiệm. Do vậy, cần có thêm
+              nhiều nghiên cứu trên người để khẳng định lợi ích này của nấm
+              bờm sư tử.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>1.2 Giảm nhẹ các triệu chứng trầm cảm và lo âu</h3>
+            <p>
+              Có tới 30% số người sống ở các nước phát triển gặp phải các
+              triệu chứng lo âu và trầm cảm. Mặc dù có nhiều nguyên nhân gây
+              lo âu và trầm cảm, nhưng chứng viêm mãn tính có thể là một trong
+              những nguyên nhân chính. Và các nghiên cứu trên động vật đã phát
+              hiện ra rằng chiết xuất từ nấm bờm sư tử có tác dụng giúp tái
+              tạo tế bào não, cải thiện hoạt động của vùng hải mã - vùng não
+              chịu trách nhiệm xử lý ký ức và cảm xúc. Việc cải thiện chức
+              năng của hồi hải mã giúp làm giảm các hành vi lo lắng và trầm
+              cảm (nghiên cứu trên chuột thí nghiệm).
+            </p>
+            <p>
+              Một nghiên cứu nhỏ thực hiện ở những phụ nữ mãn kinh cho thấy ăn
+              bánh quy có chứa nấm hầu thủ hằng ngày trong 1 tháng có thể làm
+              giảm cảm giác lo lắng và kích thích.
+            </p>
+            <p>
+              Dầu đậu nành có thể được dùng để chiên xào, tốt hơn so với dầu
+              bắp và dầu hướng dương. Tuy nhiên, bạn không nên chiên xào quá
+              lâu hoặc đun dầu đậu nành ở nhiệt độ quá cao, sẽ sinh ra chất
+              độc gây ung thư.
+            </p>
+            <figure>
+              <img src="../IMAGE/news10.webp" alt="Các loại đậu" width="500px" />
+              <figcaption style="text-align: center; font-style: italic; color: gray">
+                Nấm bờm có tác dụng kiểm soát tình trạng lo âu và căng thẳng
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="section">
+            <h3>1.3 Tăng tốc độ phục hồi sau chấn thương hệ thần kinh</h3>
+            <p>
+              Hệ thần kinh con người bao gồm não, tủy sống và các dây thần
+              kinh đi khắp cơ thể. Chúng phối hợp với nhau để gửi và truyền
+              các tín hiệu điều khiển hầu hết mọi chức năng của cơ thể. Tổn
+              thương não hoặc tủy sống có thể gây tê liệt hoặc mất chức năng
+              thâm thần, mất nhiều thời gian để phục hồi.
+            </p>
+
+            <p>
+              Tuy nhiên, nghiên cứu đã phát hiện ra rằng chiết xuất nấm hầu
+              thủ có thể giúp tăng tốc độ phục hồi của các chấn thương thần
+              kinh bằng cách kích thích sự phát triển, tự hồi phục các tế bào
+              thần kinh. Thực tế, chiết xuất nấm bờm sư tử đã được chứng minh
+              là có thể làm giảm 23 - 41% thời gian phục hồi trên những con
+              chuột bị chấn thương hệ thần kinh.
+            </p>
+            <p>
+              Ngoài ra, chiết xuất nấm bờm sư tử cũng có thể làm giảm mức độ
+              nghiêm trọng của tổn thương não sau đột quỵ. Trong một nghiên
+              cứu, việc sử dụng chiết xuất nấm hầu thủ liều cao cho chuột ngay
+              sau khi bị đột quỵ giúp làm giảm viêm, giảm 44% kích thước chấn
+              thương não liên quan tới đột quỵ. Dù vậy, vẫn chưa có nghiên cứu
+              được thực hiện trên người để đánh giá được tác dụng này của nấm
+              bờm sư tử.
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>1.4 Chống lại các vết loét trong đường tiêu hóa</h3>
+            <p>
+              Các vết loét có thẻ hình thành ở bất kỳ vị trí nào dọc theo
+              đường tiêu hóa, bao gồm dạ dày, ruột non và ruột già. Loét dạ
+              dày thường do 2 nguyên nhân: Sự phát triển quá mức của vi khuẩn
+              H.pylori và tổn thương lớp niêm mạc dạ dày do sử dụng lâu dài
+              các thuốc chống viêm không steroid (NSAID).
+            </p>
+            <img src="../IMAGE/news11.jpg" alt="" />
+            <p>
+              Chiết xuất từ nấm hầu thủ có thể bảo vệ cơ thể chống lại sự phát
+              triển của các vết loét dạ dày bằng cách ức chế sự phát triển của
+              vi khuẩn H.pylori và bảo vệ niêm mạc dạ dày khỏi bị tổn thương.
+              Ngoài ra, một nghiên cứu trên động vật cũng cho thấy chiết xuất
+              từ nấm hầu thủ có hiệu quả hơn thuốc giảm axit truyền thống
+              trong việc ngăn ngừa loét dạ dày do rượu. Đồng thời, nó cũng
+              không có bất kỳ tác dụng phụ tiêu cực nào. Bên cạnh đó, chiết
+              xuất từ nấm bờm sư tử còn giúp giảm viêm, ngăn ngừa tổn thương
+              mô ở các khu vực khác của ruột. Thực tế, chúng có thể hỗ trợ
+              điều trị các bệnh viêm ruột như viêm loét đại tràng và bệnh
+              Crohn. Một nghiên cứu ở những bệnh nhân viêm loét đại tràng cho
+              thấy việc uống bổ sung các sản phẩm chứa 14% chiết xuất từ nấm
+              bờm sư tử sau 3 tuần có thể làm giảm đáng kể các triệu chứng và
+              cải thiện chất lượng cuộc sống. Tuy nhiên, cần có thêm nhiều
+              nghiên cứu để khẳng định tác dụng của nó.
+            </p>
+          </div>
+          <hr />
+          <section class="popular-news">
+            <div class="container">
+              <div class="posts-news">
+                <h5>Bài viết xem nhiều</h5>
+                <ul>
+                  <li>
+                    <a href="./article1.html">Không phải sữa, những thực phẩm này còn giàu Canxi
+                      hơn!</a>
+                  </li>
+                  <li>
+                    <a href="./article2.html">Organic là gì? Vì sao nên sử dụng thực phẩm hữu cơ?</a>
+                  </li>
+                  <li>
+                    <a href="./article3.html">Phân biệt các loại dầu ăn hiện nay để đảm bảo sức khỏe
+                      cả nhà</a>
+                  </li>
+                  <li>
+                    <a href="./article4.html">9 lợi ích sức khỏe của nấm bờm sư tử và tác dụng phụ</a>
+                  </li>
+                  <li>
+                    <a href="./article5.html">Calo và chất dinh dưỡng để cung cấp năng lượng cho hoạt
+                      động thể thao</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="comment-news">
+                <h5>Bình luận</h5>
+                <div class="fb-comments"
+                  data-href="http://t0307.store.nhanh.vn/khong-phai-sua-nhung-thuc-pham-nay-con-giau-canxi-hon!-n99126.html"
+                  data-numposts="5"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Về Nhanh Organic</h5>
+            <p>
+              Chúng tôi cung cấp thực phẩm sạch, an toàn và đảm bảo chất lượng
+              ngon nhất giao đến tận tay người tiêu dùng.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i> 102 Thái Thịnh, Trung
+              Liệt, Đống Đa, Hà Nội
+            </p>
+            <p><i class="fas fa-phone me-2"></i> 1900.2812</p>
+            <p><i class="fas fa-envelope me-2"></i> info@nhanhorganic.vn</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Theo dõi chúng tôi</h5>
+            <div class="social-links">
+              <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p>© 2025 Nhanh Organic. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to top button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+
+</body>
+
+</html>

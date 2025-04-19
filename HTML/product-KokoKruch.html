@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ngũ cốc Nestlé Koko Krunch</title>
+  <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="../CSS/style.css" rel="stylesheet" />
+  <script src="../JS/bootstrap.bundle.min.js"></script>
+  <script src="../JS/script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <!-- Sidebar Toggle Button -->
+          <div class="d-flex d-lg-none sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <span class="logo-leaf d-none d-lg-inline-block"><i class="fas fa-leaf"></i></span>
+          <a href="../HTML/index.html" style="text-decoration: none"><span class="logo-text">Nhanh Organic</span></a>
+        </div>
+        <div style="display: flex;">
+          <div class="dangnhapdangki">
+            <button type="button" class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal"
+              data-bs-target="#dangnhapdangkimodal"><i class="fas fa-user"></i></button>
+            <div class="modal fade" id="dangnhapdangkimodal" tabindex="-1" aria-labelledby="dangnhapdangkimodalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active w-100" id="dangnhap-tab" data-bs-toggle="tab"
+                          data-bs-target="#dangnhap" type="button" role="tab" aria-controls="dangnhap-tab"
+                          aria-selected="true" style="font-size: 25px;" style="width: 50%;">ĐĂNG NHẬP</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link w-100" id="dangki-tab" data-bs-toggle="tab" data-bs-target="#dangki"
+                          type="button" role="tab" aria-controls="dangki-tab" aria-selected="true"
+                          style="font-size: 25px;" style="width:50%">ĐĂNG
+                          KÍ</button>
+                      </li>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="dangnhap" role="tabpanel"
+                        aria-labelledby="dangnhap-tab">
+
+                        <form class="row mb-2 p-4" id="loginForm">
+                          <div class="col-12">
+                            <div id="loginText" class="form-text"
+                              style="font-weight: 600; color: rgb(3, 84, 22);font-size: 15px;">
+                              Vui lòng
+                              đăng nhập trước
+                              khi mua hàng để
+                              tích lũy điểm, cơ
+                              hội nhận thêm nhiều ưu đãi từ chương trình thành viên Nhanh
+                              Organic</div>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" id="emailInput" name="Email" placeholder="Email">
+                            <span id="email_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" id="passwordInput" name="Password"
+                              placeholder="Mật khẩu">
+                            <span id="pass_error"></span>
+
+                          </div>
+                          <div class="col-12 mt-3">
+                            <a href="#" class="forgot-password"
+                              style="text-decoration: none; color: var(--main-green);">Quên
+                              mật khẩu?</a>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-login  btn-lg w-100">ĐĂNG
+                              NHẬP</button>
+                          </div>
+                        </form>
+
+                      </div>
+                      <div class="tab-pane" id="dangki" role="tabpanel" aria-labelledby="dangki-tab">
+                        <form class="row mb-3 p-4" id="formSigin">
+                          <div class="col-12 mt-4">
+                            <input type="text" class="form-control" placeholder="Họ tên" id="hoTen">
+                            <span id="hoTen_error"></span>
+                          </div>
+
+                          <div class="col-6 mt-3">
+                            <input type="text" class="form-control" placeholder="Số điện thoại" id="number">
+                            <span id="numberRegister_error"></span>
+                          </div>
+                          <div class="col-6 mt-3">
+                            <select class="form-select">
+                              <option selected>Chọn giới tính</option>
+                              <option value="Nam">Nam</option>
+                              <option value="Nữ">Nữ</option>
+
+                            </select>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Email" id="emailRegister">
+                            <span id="emailRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" id="passwordRegister">
+                            <span id="passwordRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" id="rePassword">
+                            <span id="rePassword_error"></span>
+                          </div>
+                          <!-- <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Chọn thành phố</option>
+                                                  <option value="hcmcity">Thành phố Hồ Chí Minh</option>
+                                                  <option value="ntcity">Thành phố Nha Trang</option>
+                                                  <option value="dncity">Thành phố Đà Nẵng</option>
+                                                  <option value="hncity">Thành phố Hà Nội</option>
+                                              </select>
+                                          </div>
+                                          <div class="col-6 mt-3">
+                                              <select class="form-select">
+                                                  <option selected>Quận</option>
+                                                  <option value="1">Quận 1</option>
+                                                  <option value="2">Quận 2</option>
+                                                  <option value="3">Quận 3</option>
+                                                  <option value="4">Quận 4</option>
+                                              </select>
+                                          </div> -->
+                          <div class="col-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Địa chỉ" id="diaChi">
+                            <span id="addRegister_error"></span>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <label for="" class="form-label">Ngày sinh:</label>
+                            <input type="datetime-local" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+                          </div>
+
+                          <div class="col-12 mt-3">
+                            <div class="form-text">Tôi đã đọc và đồng ý với <span style="color: orangered;">CHÍNH
+                                SÁCH</span> của
+                              chương trình.</div>
+                            <input type="checkbox" class="dongY">
+                            <span id="check_error"></span>
+                          </div>
+                          <div class="col mt-3">
+                            <button type="submit" class="btn btn-dangki w-100">ĐĂNG
+                              KÍ</button>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <a href="../HTML/cart.html" class="btn btn-sm btn-outline-success"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h5>Menu</h5>
+    </div>
+    <ul class="sidebar-menu">
+      <li>
+        <a href="../HTML/index.html"><i class="fas fa-home"></i> Trang chủ</a>
+      </li>
+      <li>
+        <a href="../HTML/products.html"><i class="fas fa-carrot"></i> Sản phẩm</a>
+      </li>
+      <li>
+        <a href="../HTML/news.html"><i class="fas fa-newspaper"></i> Tin tức</a>
+      </li>
+      <li>
+        <a href="../HTML/lienhe.html"><i class="fas fa-phone"></i> Liên hệ</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Product Detail Content -->
+    <section class="product-detail py-4">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="../HTML/index.html">Trang chủ</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="../HTML/products.html">Sản phẩm</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Ngũ cốc Nestlé Koko Krunch
+            </li>
+          </ol>
+        </nav>
+
+        <div class="row mt-4">
+          <!-- Product Image -->
+          <div class="col-md-5 mb-4">
+            <div class="product-main-image mb-3">
+              <img src="../IMAGE/KokoKruch0.jpg" alt="Ngũ cốc Nestlé Koko Krunch" class="img-fluid rounded"
+                id="main-img" />
+            </div>
+            <div class="product-thumbnail-images d-flex">
+              <div class="thumbnail-container border rounded p-1 me-2 active">
+                <img src="../IMAGE/KokoKruch0.jpg" alt="Thumbnail 1" class="img-fluid" onclick="doiAnh('0')" />
+              </div>
+              <div class="thumbnail-container border rounded p-1 me-2">
+                <img src="../IMAGE/KokoKruch1.jpg" alt="Thumbnail 2" class="img-fluid" onclick="doiAnh('1')" />
+              </div>
+              <div class="thumbnail-container border rounded p-1 me-2">
+                <img src="../IMAGE/KokoKruch2.jpg" alt="Thumbnail 3" class="img-fluid" onclick="doiAnh('2')" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-details col-md-7">
+            <h1 class="product-title mb-3">Ngũ cốc Nestlé Koko Krunch</h1>
+
+            <div class="product-meta mb-3">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-3">Thương hiệu:
+                  <a href="#" style="text-decoration: none" class="text-success">Đang cập nhật</a></span>
+                <span>Tình trạng:
+                  <span class="text-success">Còn hàng</span></span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+            </div>
+
+            <div class="product-price mb-4">
+              <h3 class="text-success fw-bold">25,000₫</h3>
+              <p class="text-muted mb-0">Kích thước:</p>
+            </div>
+
+            <div class="product-size-options mb-4">
+              <div class="btn-group" role="group" aria-label="Size options">
+                <input type="radio" class="btn-check" name="size" id="size2" autocomplete="off" />
+                <label class="btn btn-outline-success" for="size2">25 gram</label>
+
+                <input type="radio" class="btn-check" name="size" id="size3" autocomplete="off" />
+                <label class="btn btn-outline-success" for="size3">500 gram</label>
+              </div>
+            </div>
+
+            <div class="product-info-item mb-3">
+              <p class="mb-1">Chưa có mô tả cho sản phẩm này</p>
+            </div>
+
+            <div class="product-quantity mb-4">
+              <div class="d-flex align-items-center">
+                <label class="me-3">Số lượng:</label>
+                <div class="input-group" style="width: 130px">
+                  <button class="btn btn-outline-secondary" type="button" id="decreaseBtn">
+                    -
+                  </button>
+                  <input type="text" class="form-control text-center" value="1" id="quantityInput" />
+                  <button class="btn btn-outline-secondary" type="button" id="increaseBtn">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-actions">
+              <button class="btn btn-success btn-lg mb-2 mb-md-0" id="addToCartBtn">
+                <i class="fas fa-shopping-cart me-2"></i>Thêm vào giỏ hàng
+              </button>
+            </div>
+
+            <div class="product-delivery mt-4">
+              <p class="text-muted">
+                Gọi đặt mua:
+                <strong class="text-success">1900.2812</strong> để nhận chính
+                sách đại hàng
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs mt-5">
+          <ul class="nav nav-tabs" id="productDetailTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description"
+                type="button" role="tab" aria-controls="description" aria-selected="true">
+                Mô tả sản phẩm
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button"
+                role="tab" aria-controls="detail" aria-selected="false">
+                Chi tiết sản phẩm
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button"
+                role="tab" aria-controls="reviews" aria-selected="false">
+                Bình luận
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content p-4 border border-top-0 rounded-bottom" id="productDetailTabsContent">
+            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <p>
+                Ngũ cốc ăn sáng Nestlé Koko Krunch vị socola được làm từ những
+                loại ngũ cốc giàu dinh dưỡng và theo vị sôcôla thơm ngon. Nếu
+                dùng kèm sản phẩm với sữa thì sẽ cung cấp 29% hàm lượng canxi
+                và 30% hàm lượng vitamin C cần thiết mỗi ngày. Sản phẩm bổ
+                sung vitamin, khoáng chất cần thiết cho cơ thể, giúp nâng cao
+                sức khỏe, xương, răng chắc khỏe và phòng ngừa thiếu máu. Sản
+                phẩm giàu Carbohydrate và chất xơ giúp bé yêu tiêu hóa tốt và
+                chống béo phì.
+              </p>
+            </div>
+            <div class="tab-pane fade" id="detail" role="tabpanel" aria-labelledby="detail-tab">
+              <p>
+                Ngũ cốc ăn sáng Nestlé Koko Krunch vị socola được làm từ những
+                loại ngũ cốc giàu dinh dưỡng và theo vị sôcôla thơm ngon. Nếu
+                dùng kèm sản phẩm với sữa thì sẽ cung cấp 29% hàm lượng canxi
+                và 30% hàm lượng vitamin C cần thiết mỗi ngày. Sản phẩm bổ
+                sung vitamin, khoáng chất cần thiết cho cơ thể, giúp nâng cao
+                sức khỏe, xương, răng chắc khỏe và phòng ngừa thiếu máu. Sản
+                phẩm giàu Carbohydrate và chất xơ giúp bé yêu tiêu hóa tốt và
+                chống béo phì.
+              </p>
+            </div>
+            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+              <p>Chưa có bình luận nào cho sản phẩm này.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products mt-5">
+          <h3 class="section-title text-center">Sản phẩm gợi ý</h3>
+          <div class="row mt-4">
+            <div class="col-6 col-md-3">
+              <div class="product-card" onclick="window.location.href='product-beef_brisket.html'">
+                <img src="../IMAGE/BeefAus0.jpg" alt="Product" class="product-image" />
+                <h5 class="product-title">
+                  Nạm bò Úc tươi Trung Đông nhập khẩu
+                </h5>
+                <p class="product-price">84,000₫</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="product-card" onclick="window.location.href='product-beef_shoulder.html'">
+                <img src="../IMAGE/BeefTD0.jpg" alt="Product" class="product-image" />
+                <h5 class="product-title">
+                  Vai bò Úc tươi Trung Đông nhập khẩu
+                </h5>
+                <p class="product-price">120,000₫</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="product-card" onclick="window.location.href='product-Oats.html'">
+                <img src="../IMAGE/Oats0.jpg" alt="Product" class="product-image" />
+                <h5 class="product-title">Hạt yến mạch cán mỏng hữu cơ</h5>
+                <p class="product-price">103,000₫</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="product-card" onclick="window.location.href='product-Quaker.html'">
+                <img src="../IMAGE/Quaker0.jpg" alt="Best seller" class="product-image" />
+                <h5 class="product-title">
+                  Yến mạch ăn liền Quaker hộp 600g
+                </h5>
+                <p class="product-price">115,000₫</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Về Nhanh Organic</h5>
+            <p>
+              Chúng tôi cung cấp thực phẩm sạch, an toàn và đảm bảo chất lượng
+              ngon nhất giao đến tận tay người tiêu dùng.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i> 102 Thái Thịnh, Trung
+              Liệt, Đống Đa, Hà Nội
+            </p>
+            <p><i class="fas fa-phone me-2"></i> 1900.2812</p>
+            <p><i class="fas fa-envelope me-2"></i> info@nhanhorganic.vn</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Theo dõi chúng tôi</h5>
+            <div class="social-links">
+              <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p>© 2025 Nhanh Organic. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to top button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <script>
+
+    function doiAnh(state) {
+      var mainImg = document.getElementById("main-img");
+      mainImg.src = "../IMAGE/KokoKruch" + state + ".jpg";
+    }
+
+
+
+  </script>
+</body>
+
+</html>
